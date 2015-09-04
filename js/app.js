@@ -16,4 +16,21 @@ angular.module('app', ['components'])
                 other: '{} pív'
             };
         }
+    })
+    .controller('PhonesCtrl', function($scope){
+        $scope.phones =[
+            {
+                model: 'Motorola',
+                price:'200'
+            },
+            {
+                model: 'LG',
+                price:'100'
+            },
+            {
+                model: 'Nokia',
+                price:'250'
+            }
+
+        ]
     });

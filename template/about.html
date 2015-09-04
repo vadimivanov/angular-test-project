@@ -1,0 +1,36 @@
+<div class="home">
+    <script type="text/javascript">
+        // Д/з 45
+
+        function viewDate(n) {
+
+            var now = new Date();
+            var nowMilli = now.getTime();
+
+            var nowPlus79 = new Date(1000*60*60*24*n);
+            var milli79 = nowPlus79.getTime();
+
+            var summaMilli = nowMilli + milli79;
+            var itogMoment = new Date(summaMilli);
+            var myDays = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+            var myMonth = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+            document.write("День недели: " + myDays[itogMoment.getDay()] + "<br />");
+            document.write("Число: " + itogMoment.getDate() + "<br />");
+            document.write("Месяц: " + myMonth[itogMoment.getMonth()] + "<br />");
+            document.write("Год: " + itogMoment.getFullYear() + "<br />");
+
+        }
+
+        var userDays = prompt("Введите число дней от 1 до 1000");
+
+        if (userDays > 1000 || userDays < 1 || isNaN(userDays)) {
+            document.write("Вы ввели некорректное значение!");
+        }
+        else {
+            var itog = Math.round(userDays);
+            document.write("Через " + itog + " дней, будет вот такая дата: " + "<br />");
+            viewDate(itog);
+        }
+
+    </script>
+</div>
